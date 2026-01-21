@@ -1,0 +1,153 @@
+### Cantantes
+
+# GET todos los cantantes
+GET http://localhost:8000/cantantes/
+
+###
+
+# POST crear cantante 1 - Bad Bunny
+POST http://localhost:8000/cantantes/
+Content-Type: application/json
+
+{
+  "nombre": "Bad Bunny",
+  "edad": 30,
+  "genero_musical": "Reggaeton",
+  "oyentes_mensuales_spotify": 70000000,
+  "activo": true
+}
+
+###
+
+# POST crear cantante 2 - Bizarrap
+POST http://localhost:8000/cantantes/
+Content-Type: application/json
+
+{
+  "nombre": "Bizarrap",
+  "edad": 25,
+  "genero_musical": "Trap",
+  "oyentes_mensuales_spotify": 35000000,
+  "activo": true
+}
+
+###
+
+# POST crear cantante 3 - Lit Killah
+POST http://localhost:8000/cantantes/
+Content-Type: application/json
+
+{
+  "nombre": "Lit Killah",
+  "edad": 24,
+  "genero_musical": "Trap",
+  "oyentes_mensuales_spotify": 12400000,
+  "activo": true
+}
+
+###
+
+# GET cantante por ID 
+GET http://localhost:8000/cantantes/7
+
+###
+
+# PUT actualizar cantante ID 
+PUT http://localhost:8000/cantantes/7
+Content-Type: application/json
+
+{
+  "nombre": "Bad Bunny",
+  "edad": 31,
+  "genero_musical": "Reggaeton",
+  "oyentes_mensuales_spotify": 75000000,
+  "activo": true
+}
+
+###
+
+### Álbumes
+
+# GET todos los álbumes
+GET http://localhost:8000/albumes/
+
+###
+
+# POST crear álbum para Bad Bunny
+POST http://localhost:8000/albumes/
+Content-Type: application/json
+
+{
+  "nombre": "Un Verano Sin Ti",
+  "cantante_id": 7,
+  "precio": 19.99,
+  "genero": "Reggaeton"
+}
+
+###
+
+# POST crear otro álbum para Bad Bunny
+POST http://localhost:8000/albumes/
+Content-Type: application/json
+
+{
+  "nombre": "Nadie Sabe Lo Que Va A Pasar Mañana",
+  "cantante_id": 7,
+  "precio": 14.99,
+  "genero": "Reggaeton"
+}
+
+###
+
+# POST crear álbum para Bizarrap
+POST http://localhost:8000/albumes/
+Content-Type: application/json
+
+{
+  "nombre": "BZRP Music Sessions, Vol. 53",
+  "cantante_id": 3,
+  "precio": 9.99,
+  "genero": "Trap"
+}
+
+###
+
+# POST crear álbum para Lit Killah
+POST http://localhost:8000/albumes/
+Content-Type: application/json
+
+{
+  "nombre": "La Oscuridad",
+  "cantante_id": 8,
+  "precio": 11.99,
+  "genero": "Trap"
+}
+
+###
+
+# GET álbum por ID 1
+GET http://localhost:8000/albumes/1
+
+###
+
+# PUT actualizar álbum ID
+PUT http://localhost:8000/albumes/1
+Content-Type: application/json
+
+{
+  "nombre": "Un Verano Sin Ti",
+  "cantante_id": 7,
+  "precio": 24.99,
+  "genero": "Reggaeton Latino"
+}
+
+###
+
+# DELETE álbum ID
+DELETE http://localhost:8000/albumes/3
+
+###
+
+# DELETE cantante ID 
+DELETE http://localhost:8000/cantantes/1
+
