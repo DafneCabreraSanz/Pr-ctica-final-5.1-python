@@ -4,6 +4,10 @@ API REST desarrollada con FastAPI y PostgreSQL (Docker) para administrar cantant
 
 **Autor:** Dafne Cabrera Sanz
 
+**GitHub:** https://github.com/DafneCabreraSanz/Pr-ctica-final-5.1-python.git
+
+**Documentación Swagger:** https://api-cantantes.onrender.com/docs
+
 ---
 
 ## 🗂️ Entidades
@@ -166,3 +170,43 @@ Usa `test_api.rest` con la extensión REST Client de VS Code.
 - SQLAlchemy
 - Pydantic
 - PostgreSQL
+
+---
+
+## 📸 Capturas de Pantalla
+
+### Desarrollo y Configuración
+
+![Imagen 1](imagenes/WhatsApp%20Image%202026-02-10%20at%2009.29.49.jpeg)
+
+![Imagen 2](imagenes/WhatsApp%20Image%202026-02-10%20at%2010.02.30.jpeg)
+
+![Imagen 3](imagenes/WhatsApp%20Image%202026-02-10%20at%2010.46.37.jpeg)
+
+![Imagen 4](imagenes/WhatsApp%20Image%202026-02-10%20at%2010.47.40.jpeg)
+
+![Imagen 5](imagenes/WhatsApp%20Image%202026-02-10%20at%2010.48.06.jpeg)
+
+![Imagen 6](imagenes/WhatsApp%20Image%202026-02-10%20at%2010.49.23.jpeg)
+
+![Imagen 7](imagenes/WhatsApp%20Image%202026-02-10%20at%2010.49.46.jpeg)
+
+![Imagen 8](imagenes/WhatsApp%20Image%202026-02-10%20at%2010.50.14.jpeg)
+
+![Imagen 9](imagenes/WhatsApp%20Image%202026-02-10%20at%2010.50.36.jpeg)
+
+![Imagen 10](imagenes/WhatsApp%20Image%202026-02-10%20at%2010.51.00.jpeg)
+
+![Imagen 11](imagenes/WhatsApp%20Image%202026-02-10%20at%2010.51.24.jpeg)
+
+![Imagen 12](imagenes/WhatsApp%20Image%202026-02-10%20at%2010.53.21.jpeg)
+
+![Imagen 13](imagenes/WhatsApp%20Image%202026-02-10%20at%2010.55.21.jpeg)
+
+![Imagen 14](imagenes/WhatsApp%20Image%202026-02-10%20at%2010.58.02.jpeg)
+
+![Imagen 15](imagenes/WhatsApp%20Image%202026-02-10%20at%2011.34.21.jpeg)
+
+![Imagen 16](imagenes/WhatsApp%20Image%202026-02-10%20at%2011.47.19.jpeg)
+
+![Imagen 17](imagenes/WhatsApp%20Image%202026-02-10%20at%2011.53.40.jpeg)
