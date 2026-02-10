@@ -1,21 +1,14 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
-from database.database import SessionLocal
-from models.cantante import Cantante
-from schemas.cantante import CantanteCreate, CantanteResponse
+from app.database.database import get_db
+from app.models.cantante import Cantante
+from app.schemas.cantante import CantanteCreate, CantanteResponse
 
 router = APIRouter(
     prefix="/cantantes",
     tags=["cantantes"]
 )
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 @router.get("/", response_model=list[CantanteResponse])
 def get_cantantes(db: Session = Depends(get_db)):

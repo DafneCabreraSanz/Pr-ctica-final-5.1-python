@@ -1,6 +1,6 @@
 # API de Gestión Musical - Cantantes y Álbumes
 
-API REST desarrollada con FastAPI y SQLite para administrar cantantes y sus álbumes.
+API REST desarrollada con FastAPI y PostgreSQL (Docker) para administrar cantantes y sus álbumes.
 
 **Autor:** Dafne Cabrera Sanz
 
@@ -21,28 +21,30 @@ Relación: Un cantante → Múltiples álbumes (1:N)
 ## 📁 Estructura del Proyecto
 
 ```
-CabreraSanz_Dafne_p3.1/
-├── main.py                      # Punto de entrada de la aplicación
+CabreraSanz_Dafne_Practica_final_5.1/
 ├── requirements.txt             # Dependencias del proyecto
 ├── README.md                    # Este archivo
 ├── test_api.rest                # Pruebas de endpoints (REST Client)
 ├── .gitignore                   # Archivos a ignorar en git
-├── database/
-│   ├── __init__.py
-│   ├── database.py              # Configuración de SQLAlchemy y SQLite
-│   └── database.db              # Base de datos persistente (generado automáticamente)
-├── models/
-│   ├── __init__.py
-│   ├── cantante.py              # Modelo ORM de Cantante
-│   └── album.py                 # Modelo ORM de Álbum
-├── schemas/
-│   ├── __init__.py
-│   ├── cantante.py              # Esquemas Pydantic para Cantante
-│   └── album.py                 # Esquemas Pydantic para Álbum
-└── routes/
-    ├── __init__.py
-    ├── cantantes.py             # Endpoints CRUD de Cantantes
-    └── albumes.py               # Endpoints CRUD de Álbumes
+├── docker-compose.yml           # Orquestacion de servicios
+├── Dockerfile                   # Imagen de la API
+└── app/
+    ├── main.py                  # Punto de entrada de la aplicacion
+    ├── database/
+    │   ├── __init__.py
+    │   └── database.py          # Configuracion de SQLAlchemy
+    ├── models/
+    │   ├── __init__.py
+    │   ├── cantante.py          # Modelo ORM de Cantante
+    │   └── album.py             # Modelo ORM de Album
+    ├── schemas/
+    │   ├── __init__.py
+    │   ├── cantante.py          # Esquemas Pydantic para Cantante
+    │   └── album.py             # Esquemas Pydantic para Album
+    └── routes/
+        ├── __init__.py
+        ├── cantantes.py         # Endpoints CRUD de Cantantes
+        └── albumes.py           # Endpoints CRUD de Albumes
 ```
 
 ---
@@ -63,12 +65,21 @@ Se han implementado las **5 operaciones CRUD** para cada recurso:
 **GET, POST, PUT, DELETE** disponibles para `/cantantes` y `/albumes`
 
 ### Base de datos
-- SQLite con persistencia en `database/database.db`
-- SQLAlchemy ORM con creación automática de tablas
+- PostgreSQL via Docker Compose (recomendado)
+- SQLAlchemy ORM con creacion automatica de tablas
 - IDs autogenerados
-- pip
+- Variable `DATABASE_URL` para elegir motor (por defecto usa SQLite)
 
-### Pasos
+### Pasos (Docker)
+
+1. **Levantar servicios**
+```bash
+docker compose up -d
+```
+
+La API estara disponible en: **http://127.0.0.1:8000**
+
+### Pasos (local sin Docker)
 
 1. **Crear entorno virtual**
 ```bash
@@ -89,9 +100,9 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. **Ejecutar la aplicación**
+4. **Ejecutar la aplicacion**
 ```bash
-fastapi dev main.py
+fastapi run app/main.py --port 8000
 ```
 
 La API estará disponible en: **http://127.0.0.1:8000**
@@ -119,7 +130,7 @@ El archivo `test_api.rest` contiene peticiones de prueba para todos los endpoint
 - **FastAPI**: Framework web moderno y rápido
 - **SQLAlchemy**: ORM para Python
 - **Pydantic**: Validación de datos
-- **SQLite**: Base de datos relacional
+- **PostgreSQL**: Base de datos relacional (Docker)
 
 ---
 
@@ -154,4 +165,4 @@ Usa `test_api.rest` con la extensión REST Client de VS Code.
 - FastAPI
 - SQLAlchemy
 - Pydantic
-- SQLite
+- PostgreSQL
