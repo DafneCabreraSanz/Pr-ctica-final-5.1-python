@@ -5,7 +5,7 @@ GET http://localhost:8000/cantantes/
 
 ###
 
-# POST crear cantante 1 - Bad Bunny
+# POST crear cantante 1 - Bad Bunny(ya existe)
 POST http://localhost:8000/cantantes/
 Content-Type: application/json
 
@@ -24,8 +24,8 @@ POST http://localhost:8000/cantantes/
 Content-Type: application/json
 
 {
-  "nombre": "Bizarrap",
-  "edad": 25,
+  "nombre": "LuchoSSj",
+  "edad": 20,
   "genero_musical": "Trap",
   "oyentes_mensuales_spotify": 35000000,
   "activo": true
@@ -58,7 +58,7 @@ Content-Type: application/json
 
 {
   "nombre": "Bad Bunny",
-  "edad": 31,
+  "edad": 30,
   "genero_musical": "Reggaeton",
   "oyentes_mensuales_spotify": 75000000,
   "activo": true
@@ -125,13 +125,13 @@ Content-Type: application/json
 
 ###
 
-# GET álbum por ID 1
-GET http://localhost:8000/albumes/1
+# GET álbum por ID 4
+GET http://localhost:8000/albumes/4
 
 ###
 
 # PUT actualizar álbum ID
-PUT http://localhost:8000/albumes/1
+PUT http://localhost:8000/albumes/5
 Content-Type: application/json
 
 {
@@ -144,10 +144,10 @@ Content-Type: application/json
 ###
 
 # DELETE álbum ID
-DELETE http://localhost:8000/albumes/3
+DELETE http://localhost:8000/albumes/1
 
 ###
 
 # DELETE cantante ID 
-DELETE http://localhost:8000/cantantes/1
+DELETE http://localhost:8000/cantantes/9
 
