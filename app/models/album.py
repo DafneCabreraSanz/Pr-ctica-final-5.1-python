@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, DateTime, Float, ForeignKey
-from database.database import Base
+from app.database.database import Base
 from datetime import datetime
 
 class Album(Base):
